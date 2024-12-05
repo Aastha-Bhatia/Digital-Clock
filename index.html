@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DIGITAL CLOCK</h1>
+        <h1 class="clock"></h1>
+    </div>
+    <script>
+        const getTime=()=>{
+            // to get the time
+            let d=new Date();
+            let hours=d.getHours();
+            let amPm=hours>=12?'PM':'AM';
+            hours=hours%12;
+            hours==0?12:hours;
+            let minutes=d.getMinutes();
+            minutes=minutes>9?minutes:"0"+minutes;
+            let seconds=d.getSeconds();
+            seconds=seconds>9?seconds:"0"+seconds;
+            return `${hours} : ${minutes} : ${seconds}  ${amPm}`; 
+            // or we can use a single function instead of writing all this code
+            // i.e
+            // return d.toLocaleTimeString();
+        };
+        setInterval(()=>{
+            let clockob=document.querySelector(".clock");
+            clockob.innerHTML=getTime();
+        },1000);
+    </script>
+</body>
+</html>
