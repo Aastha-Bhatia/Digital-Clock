@@ -30,3 +30,12 @@ To view the project locally, follow these steps:
    ```bash
    git clone https://github.com/Aastha-Bhatia/Digital-Clock.git
 2. Open the index.html file in your browser. Since it's a static HTML project, you don't need any server setup.
+
+## How to Contribute
+
+If you'd like to contribute to this project, please follow these steps:
+
+1. Fork this repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b new-feature
